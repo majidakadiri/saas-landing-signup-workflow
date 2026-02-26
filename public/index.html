@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="dark">
+<head>
+  <title>FlowSync</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hover-lift {
+      transition: all 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px -12px rgba(79, 70, 229, 0.3);
+    }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-[#0b1120] text-gray-800 dark:text-gray-300 transition-colors duration-500">
+
+<!-- NAVBAR -->
+<nav class="fixed w-full z-50 px-10 py-6 flex justify-between items-center backdrop-blur-lg bg-white/70 dark:bg-[#0b1120]/70">
+
+  <h1 class="text-xl font-semibold tracking-wide text-[#0b1120] dark:text-white">
+    Flow<span class="text-indigo-600">Sync</span>
+  </h1>
+
+  <div class="flex items-center gap-6">
+
+    <!-- BLOG BUTTON -->
+    <a href="#blog"
+      class="text-sm font-medium hover:text-indigo-600 transition">
+      Blog
+    </a>
+
+    <!-- FEATURES BUTTON -->
+    <a href="#features"
+      class="text-sm font-medium hover:text-indigo-600 transition">
+      Features
+    </a>
+
+    <button onclick="toggleMode()"
+      class="text-sm px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700">
+      Toggle Mode
+    </button>
+
+    <a href="#signup"
+      class="bg-indigo-600 text-white px-7 py-3 rounded-xl text-lg font-semibold
+             hover:bg-indigo-500 transition shadow-lg shadow-indigo-500/30">
+      Get Started
+    </a>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="min-h-screen flex items-center px-12 pt-32 relative overflow-hidden">
+
+  <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-500 rounded-full blur-3xl opacity-20"></div>
+  <div class="absolute bottom-20 right-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl opacity-20"></div>
+
+  <div class="grid md:grid-cols-2 gap-20 items-center max-w-7xl mx-auto w-full">
+
+    <div class="fade-in">
+      <h2 class="text-6xl font-bold leading-tight mb-8">
+        Automate Workflows.<br>
+        <span class="text-indigo-600">Scale With Confidence.</span>
+      </h2>
+
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-10">
+        Built for modern teams who demand clarity, control,
+        and reliable automation infrastructure.
+      </p>
+
+      <a href="#signup"
+        class="bg-indigo-600 text-white px-10 py-4 rounded-xl text-xl font-semibold
+               hover:bg-indigo-500 transition shadow-xl shadow-indigo-500/30">
+        Request Early Access
+      </a>
+    </div>
+
+    <div class="relative fade-in">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600"
+        class="rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800">
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section id="features" class="py-32 px-12 fade-in">
+
+  <div class="max-w-6xl mx-auto text-center">
+
+    <h3 class="text-4xl font-semibold mb-16">
+      Powerful Features
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-12">
+
+      <div class="hover-lift p-8 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#111827] shadow-lg">
+        <h4 class="text-xl font-semibold mb-4 text-indigo-600">
+          Visual Workflow Builder
+        </h4>
+        <p>
+          Build complex automation flows using drag-and-drop logic.
+          No heavy coding required.
+        </p>
+      </div>
+
+      <div class="hover-lift p-8 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#111827] shadow-lg">
+        <h4 class="text-xl font-semibold mb-4 text-indigo-600">
+          Real-Time Monitoring
+        </h4>
+        <p>
+          Monitor automation performance, logs, failures,
+          and execution status in real-time.
+        </p>
+      </div>
+
+      <div class="hover-lift p-8 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#111827] shadow-lg">
+        <h4 class="text-xl font-semibold mb-4 text-indigo-600">
+          Secure Team Collaboration
+        </h4>
+        <p>
+          Assign roles and permissions to teams securely.
+          Manage automation access safely.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BLOG SECTION -->
+<section id="blog" class="py-32 px-12 bg-gray-50 dark:bg-[#0f172a] fade-in">
+
+  <div class="max-w-6xl mx-auto text-center">
+
+    <h3 class="text-4xl font-semibold mb-16">
+      How FlowSync Works
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-12 text-left">
+
+      <div class="hover-lift p-8 rounded-2xl bg-white dark:bg-[#111827] shadow-lg">
+        <h4 class="text-xl font-semibold mb-4 text-indigo-600">
+          1. Connect Your Tools
+        </h4>
+        <p>
+          FlowSync integrates with your CRM, email platforms,
+          analytics tools, and internal systems.
+          It acts as a smart bridge between disconnected software.
+        </p>
+      </div>
+
+      <div class="hover-lift p-8 rounded-2xl bg-white dark:bg-[#111827] shadow-lg">
+        <h4 class="text-xl font-semibold mb-4 text-indigo-600">
+          2. Define Automation Rules
+        </h4>
+        <p>
+          Set triggers and actions. For example,
+          when a new user signs up, automatically
+          send welcome emails, update CRM, and notify your team.
+        </p>
+      </div>
+
+      <div class="hover-lift p-8 rounded-2xl bg-white dark:bg-[#111827] shadow-lg">
+        <h4 class="text-xl font-semibold mb-4 text-indigo-600">
+          3. Analyze & Optimize
+        </h4>
+        <p>
+          Track workflow metrics, identify bottlenecks,
+          and continuously improve efficiency using
+          real-time performance dashboards.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SIGNUP -->
+<section id="signup" class="py-32 px-12 text-center fade-in">
+
+  <h3 class="text-4xl font-semibold mb-10">
+    Join the Early Access
+  </h3>
+
+  <form id="signupForm"
+    class="flex flex-col md:flex-row gap-6 justify-center max-w-2xl mx-auto">
+
+    <input type="text" id="name"
+      placeholder="Your Name"
+      class="p-4 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-indigo-500 outline-none w-full"
+      required>
+
+    <input type="email" id="email"
+      placeholder="Your Email"
+      class="p-4 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-indigo-500 outline-none w-full"
+      required>
+
+    <button type="submit" id="submitBtn"
+      class="bg-indigo-600 text-white px-8 py-4 rounded-xl text-lg font-semibold
+             hover:bg-indigo-500 transition shadow-lg shadow-indigo-500/30">
+      Get Access
+    </button>
+  </form>
+
+  <p id="responseMsg" class="mt-6 text-green-500"></p>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-16 text-center border-t border-gray-200 dark:border-gray-800 text-gray-500">
+  © 2026 FlowSync. Built with precision.
+</footer>
+
+<script>
+function toggleMode() {
+  document.documentElement.classList.toggle('dark');
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+document.getElementById("signupForm")
+.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const button = document.getElementById("submitBtn");
+  button.innerHTML = "Processing...";
+  button.disabled = true;
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+
+  const res = await fetch("/signup", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name, email })
+  });
+
+  const data = await res.json();
+
+  button.innerHTML = "Access Requested ✓";
+  document.getElementById("responseMsg").innerText = data.message;
+});
+</script>
+
+</body>
+</html>
